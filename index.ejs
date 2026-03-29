@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mini Messageboard</title>
+</head>
+<body>
+
+<h1>Mini Messageboard</h1>
+
+<a href="/new">Add New Message</a>
+
+<ul>
+  <% messages.forEach((msg, index) => { %>
+    <li>
+      <strong><%= msg.user %></strong>: <%= msg.text %>
+      (<%= msg.added.toLocaleString() %>)
+      <a href="/message/<%= index %>">Open</a>
+    </li>
+  <% }) %>
+</ul>
+
+</body>
+</html>
